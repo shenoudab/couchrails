@@ -8,16 +8,17 @@ module CouchRails
     module ClassMethods
 
       def find(id)
-        get(id, db)
+        get(id)
       end
 
-      def get(id, db = database)
+      def get(id)
         begin
-          get!(id, db)
+          get!(id)
         rescue
           nil
         end
       end
+
     end
   end
 end

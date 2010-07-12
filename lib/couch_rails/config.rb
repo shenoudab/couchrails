@@ -12,5 +12,20 @@ module CouchRails
       end
     end
 
+    def self.design_directory=(value)
+      @design_directory = value
+    end
+
+    def self.design_directory
+      instance_variable_defined?(:@design_directory) ? @design_directory : ""
+    end
+
+    def self.database_name=(value)
+      @database_name = value
+    end
+
+    def self.database_name
+      instance_variable_defined?(:@database_name) ? @database_name : ""
+    end
   end
 end

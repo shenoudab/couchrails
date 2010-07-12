@@ -19,5 +19,16 @@ module CouchRails
     autoload :Validations
   end
 
+  mattr_accessor :database_name
+  @@database_name = ''
 
+  mattr_accessor :design_directory
+  @@design_directory = ''
+
+  # Default way to setup Sooner. Run rails generate sooner_install to create
+  # a fresh initializer with all configuration values.
+  def self.setup
+    yield self
+  end
+  
 end

@@ -1,7 +1,9 @@
 class <%= class_name %> < <%= options[:parent] != nil ? options[:parent].classify : 'CouchRails::Document' %>
-
+use_database '<%= class_name..underscore %>'
 <% attributes.each do |attribute| -%>
-    property :<%= attribute.declaration %>
+  property :<%= attribute.declaration %>
 <% end %>
-    timestamps!
+
+  timestamps!
+
 end
